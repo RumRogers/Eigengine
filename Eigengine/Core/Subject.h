@@ -5,9 +5,9 @@
 namespace EigenCore
 {
 	class GameObject;
-	class EigenEvent;
+	class Event;
 
-	typedef std::function<void(GameObject*, EigenEvent*)> Callback;
+	typedef std::function<void(GameObject*, Event*)> Callback;
 
 	// Observer pattern
 	class Subject
@@ -15,7 +15,7 @@ namespace EigenCore
 	public:
 		void attach(const GameObject* subscriber, const Callback callback);
 		void detach(const GameObject* subscriber);
-		void notify(const GameObject* sender, const EigenEvent* ev) const;
+		void notify(const GameObject* sender, const Event* ev) const;
 	
 	private:
 

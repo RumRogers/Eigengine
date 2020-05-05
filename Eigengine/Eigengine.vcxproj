@@ -144,10 +144,10 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EigenEvent.h" />
-    <ClInclude Include="Subject.h" />
-    <ClInclude Include="State.h" />
-    <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="Core\Event.h" />
+    <ClInclude Include="Core\State.h" />
+    <ClInclude Include="Core\Subject.h" />
+    <ClInclude Include="Math\Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

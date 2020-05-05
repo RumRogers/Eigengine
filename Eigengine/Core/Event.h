@@ -7,11 +7,11 @@ namespace EigenCore
 		SOME_EVENT
 	} EventType;
 
-	class EigenEvent
+	class Event
 	{
 	public:
 		EventType type;
 	public:
-		explicit EigenEvent(const EventType evType) : type(evType) {}
+		explicit Event(const EventType evType) : type(evType) {}
 	};
 }

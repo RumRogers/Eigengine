@@ -25,9 +25,9 @@ namespace EigenMath
 		
 		inline float magnitude() const { return std::sqrtf(x * x + y * y); }
 		inline float length() const { return magnitude(); }
-		inline Vector2D normalized() const { float len = magnitude(); return Vector2D(x / len, y / len); }
-		inline Vector2D& normalize() { float len = magnitude(); x /= len; y /= len; return *this; }
-		inline Vector2D dot(const Vector2D& rhs) { return Vector2D(x * rhs.x, y * rhs.y); }
+		inline Vector2D& normalize() { return *this /= magnitude(); }
+		inline Vector2D normalized() const { return Vector2D(*this).normalize(); }		
+		inline float dot(const Vector2D& rhs) { return x * rhs.x + y * rhs.y; }
 	};
 }
 

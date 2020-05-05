@@ -32,16 +32,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="State.h">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2D.h">
+    <ClInclude Include="Math\Vector2D.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Subject.h">
+    <ClInclude Include="Core\State.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="EigenEvent.h">
+    <ClInclude Include="Core\Subject.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Event.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
