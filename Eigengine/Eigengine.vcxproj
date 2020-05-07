@@ -145,6 +145,7 @@
     <ClCompile Include="Core\Subject.cpp" />
     <ClCompile Include="Core\Time.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Tests\Test_Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="Core\Time.h" />
     <ClInclude Include="Math\Transform2D.h" />
     <ClInclude Include="Math\Vector2D.h" />
+    <ClInclude Include="Tests\Test_Timer.h" />
     <ClInclude Include="Utils\Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
