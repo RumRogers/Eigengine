@@ -1,19 +1,19 @@
 #include "Subject.h"
-#include "Observer.h"
+#include "IObserver.h"
 #include <algorithm>
 
 namespace EigenCore
 {
-	// I would normally pass the first parameter as const Observer* const...
+	// I would normally pass the first parameter as const IObserver* const...
 	// Unfortunately, the C++ Standard forbids containers of const elements because allocator<const T>
 	// is ill-formed (Error C2338) 
-	void Subject::attach(Observer* const subscriber, const Event::EventType evType)
+	void Subject::attach(IObserver* const subscriber, const Event::EventType evType)
 	{
 		auto it = m_subscribers.find(evType);
 
 		if (!keyExists(evType))
 		{
-			m_subscribers.emplace(evType, std::vector<Observer*> { subscriber });
+			m_subscribers.emplace(evType, std::vector<IObserver*> { subscriber });
 		}
 
 		else
@@ -23,7 +23,7 @@ namespace EigenCore
 		}
 	}
 
-	void Subject::detach(Observer* const subscriber, const Event::EventType evType)
+	void Subject::detach(IObserver* const subscriber, const Event::EventType evType)
 	{
 		// assert keyExists(evType) && isSubscribed(subscriber, evType) == true
 		auto& subscribersList = m_subscribers.at(evType);
@@ -48,7 +48,7 @@ namespace EigenCore
 		return it != m_subscribers.end();
 	}
 
-	bool Subject::isSubscribed(const Observer* const subscriber, const Event::EventType evType) const
+	bool Subject::isSubscribed(const IObserver* const subscriber, const Event::EventType evType) const
 	{
 		auto subscribersList = m_subscribers.at(evType);
 		auto it_subscribers = std::find(subscribersList.begin(), subscribersList.end(), subscriber);

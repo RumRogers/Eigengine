@@ -13,5 +13,6 @@ namespace EigenCore
 		EventType type;
 	public:
 		explicit Event(const EventType evType) : type(evType) {}
+		virtual ~Event() {}
 	};
 }

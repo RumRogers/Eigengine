@@ -143,15 +143,21 @@
   <ItemGroup>
     <ClCompile Include="Core\GameObject.cpp" />
     <ClCompile Include="Core\Subject.cpp" />
+    <ClCompile Include="Core\Time.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="catch.hpp" />
+    <ClInclude Include="Core\ICommand.h" />
     <ClInclude Include="Core\Event.h" />
     <ClInclude Include="Core\GameObject.h" />
-    <ClInclude Include="Core\Observer.h" />
-    <ClInclude Include="Core\State.h" />
+    <ClInclude Include="Core\IObserver.h" />
+    <ClInclude Include="Core\IState.h" />
     <ClInclude Include="Core\Subject.h" />
+    <ClInclude Include="Core\Time.h" />
+    <ClInclude Include="Math\Transform2D.h" />
     <ClInclude Include="Math\Vector2D.h" />
+    <ClInclude Include="Utils\Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
