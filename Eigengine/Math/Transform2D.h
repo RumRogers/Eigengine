@@ -25,7 +25,7 @@ namespace EigenMath
 		inline void setScale(const Vector2D& vec) { scale = vec; };
 		inline void setRotation(const float rads) { rotation = rads; };
 		inline void setRotationDegs(const float degs) { rotation = degToRad * degs; }
-		inline Vector2D getForwardDirection() const { return Vector2D(std::cosf(position.x), std::sinf(position.y)); }
-		inline Vector2D getUpwardsDirection() const { return Vector2D(-std::sinf(position.y), std::cosf(position.x)); }
+		inline Vector2D getForwardDirection() const { return Vector2D(std::cosf(rotation), std::sinf(rotation)).normalize(); }
+		inline Vector2D getUpwardsDirection() const { return Vector2D(-std::sinf(rotation), std::cosf(rotation)).normalize(); }
 	};
 }

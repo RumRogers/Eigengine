@@ -1,5 +1,6 @@
 #pragma once
 #include <cmath>
+#include <iostream>
 
 namespace EigenMath
 {
@@ -23,6 +24,7 @@ namespace EigenMath
 		inline Vector2D operator*(const float scalar) const { return Vector2D(*this) *= scalar; }
 		inline Vector2D operator/(const float scalar) const { return Vector2D(*this) /= scalar; }
 		inline Vector2D operator-() const { return Vector2D(*this) *= -1; }
+		inline friend std::ostream& operator<<(std::ostream& os, const Vector2D& rhs) { os << "(" << rhs.x << ", " << rhs.y << ")"; return os; }
 
 		inline float magnitude() const { return std::sqrtf(x * x + y * y); }
 		inline float length() const { return magnitude(); }
