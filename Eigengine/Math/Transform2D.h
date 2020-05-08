@@ -17,6 +17,7 @@ namespace EigenMath
 
 		explicit Transform2D(const float xPos = 0, const float yPos = 0, const float rotation = 0) : position{xPos, yPos}, rotation(rotation) {}
 		explicit Transform2D(const Vector2D& position, const float rotation = 0) : Transform2D(position.x, position.y, rotation) {}
+		virtual ~Transform2D() {}
 		inline void translate(const float x, const float y) { translate(Vector2D(x, y)); };
 		inline void translate(const Vector2D& vec) { position += vec; };
 		inline void rotate(const float rads) { rotation += rads; };

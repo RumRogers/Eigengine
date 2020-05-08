@@ -2,4 +2,3 @@
 #include "catch.hpp"
 #include <iostream>
 #include <SDL.h>
-#include "Tests/Test_Timer.h"

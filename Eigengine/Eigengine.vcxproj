@@ -149,11 +149,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />
+    <ClInclude Include="Core\Component.h" />
     <ClInclude Include="Core\ICommand.h" />
     <ClInclude Include="Core\Event.h" />
     <ClInclude Include="Core\GameObject.h" />
     <ClInclude Include="Core\IObserver.h" />
     <ClInclude Include="Core\IState.h" />
+    <ClInclude Include="Core\Singleton.h" />
     <ClInclude Include="Core\Subject.h" />
     <ClInclude Include="Core\Time.h" />
     <ClInclude Include="Math\Transform2D.h" />
