@@ -4,6 +4,8 @@
 #include "../catch.hpp"
 #include "../Utils/Timer.h"
 
+//#define RUN_TEST_TIMER
+
 namespace Tests
 {
 	float waitForMillisAndGetElapsedTime(int millis)
@@ -15,15 +17,17 @@ namespace Tests
 		
 		return timer.getElapsedTime();
 	}
-}
 
-TEST_CASE("Test_Timer", "[millis]")
-{
-	float millisToWait = 1000.f / 60.f;
-	std::cout << "Milliseconds to wait: " << millisToWait << ::std::endl;
-	std::cout << "Waiting..." << std::endl;
-	float millisWaited = Tests::waitForMillisAndGetElapsedTime(millisToWait);
-	std::cout << "Time elapsed: " << millisWaited << std::endl;
+#ifdef RUN_TEST_TIMER
+	TEST_CASE("Test_Timer", "[millis]")
+	{
+		float millisToWait = 1000.f / 60.f;
+		std::cout << "Milliseconds to wait: " << millisToWait << ::std::endl;
+		std::cout << "Waiting..." << std::endl;
+		float millisWaited = Tests::waitForMillisAndGetElapsedTime(static_cast<int>(millisToWait));
+		std::cout << "Time elapsed: " << millisWaited << std::endl;
 
-	REQUIRE(millisToWait - millisWaited <= 1);
+		REQUIRE(millisToWait - millisWaited <= 1);
+	}
+#endif // RUN_TEST_TIMER
 }

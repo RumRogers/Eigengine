@@ -14,5 +14,5 @@ public:
 	}
 
 private:
-	Singleton();
+	Singleton() = default;
 };

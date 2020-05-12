@@ -11,6 +11,7 @@ namespace EigenMath
 	public:
 		explicit Vector2D(float x = 0, float y = 0) : x(x), y(y) {};
 		Vector2D(const Vector2D& rhs) { x = rhs.x; y = rhs.y; }
+		Vector2D(Vector2D&& rhs) = default;
 
 		inline Vector2D& operator=(const Vector2D& rhs) { x = rhs.x; y = rhs.y; return *this; }
 		inline float& operator[](const int idx) { return *(&x + idx); }

@@ -4,7 +4,9 @@
 
 namespace EigenUtils
 {
-	using TimePoint = std::chrono::high_resolution_clock::time_point;
+	using HiResClock = std::chrono::high_resolution_clock;
+	using TimePoint = HiResClock::time_point;
+	using Milliseconds = std::chrono::milliseconds;
 
 	class Timer
 	{
@@ -15,7 +17,7 @@ namespace EigenUtils
 			if (!m_running)
 			{
 				m_running = true;
-				m_lastTimePoint = std::chrono::high_resolution_clock::now();
+				m_lastTimePoint = HiResClock::now();
 			}
 		}
 		
@@ -24,13 +26,17 @@ namespace EigenUtils
 			if (m_running)
 			{
 				m_running = false;
-				TimePoint now = std::chrono::high_resolution_clock::now();
-				std::chrono::milliseconds duration = std::chrono::duration_cast<std::chrono::milliseconds>(now - m_lastTimePoint);
-				m_elapsedTime = duration.count();
+				
+				m_elapsedTime = computeElapsedTime();
 			}
 		}
 		inline float getElapsedTime() const
 		{
+			if (m_running)
+			{
+				return computeElapsedTime();
+			}
+
 			return m_elapsedTime;
 		}
 	private:
@@ -38,5 +44,11 @@ namespace EigenUtils
 		TimePoint m_lastTimePoint;
 		bool m_running;
 
+		inline float computeElapsedTime() const
+		{
+			TimePoint now = HiResClock::now();
+			Milliseconds duration = std::chrono::duration_cast<Milliseconds>(now - m_lastTimePoint);
+			return static_cast<float>(duration.count());
+		}
 	};
 }

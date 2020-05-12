@@ -85,7 +85,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Game.cpp" />
     <ClCompile Include="Core\GameObject.cpp" />
     <ClCompile Include="Core\Subject.cpp" />
     <ClCompile Include="Core\Time.cpp" />
@@ -150,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="catch.hpp" />
     <ClInclude Include="Core\Component.h" />
+    <ClInclude Include="Core\Game.h" />
     <ClInclude Include="Core\ICommand.h" />
     <ClInclude Include="Core\Event.h" />
     <ClInclude Include="Core\GameObject.h" />
@@ -161,6 +163,7 @@
     <ClInclude Include="Math\Transform2D.h" />
     <ClInclude Include="Math\Vector2D.h" />
     <ClInclude Include="Tests\Test_Timer.h" />
+    <ClInclude Include="Utils\Logger.h" />
     <ClInclude Include="Utils\Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
